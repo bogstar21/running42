@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Hub — Main Menu</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #E8200A;
+            --bg: #0A0A0A;
+            --bg2: #111111;
+            --bg3: #181818;
+            --text: #F0EDE8;
+            --text2: #A09890;
+            --border: rgba(255, 255, 255, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Barlow', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(40px, 8vw, 70px);
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 3rem;
+        }
+
+        .hero-title span {
+            color: var(--red);
+            display: block;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .nav-button {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .nav-button:hover {
+            border-color: var(--red);
+            background: rgba(232, 32, 10, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .btn-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--red);
+        }
+
+        .btn-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .btn-desc {
+            font-size: 14px;
+            color: var(--text2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="hero-title">Training <span>Dashboard</span></h1>
+
+        <div class="menu-grid">
+            <!-- BUTTON 1 -->
+            <a href="plan-5k.html" class="nav-button">
+                <span class="btn-label">Running Plan</span>
+                <span class="btn-title">5K Sub-22:00</span>
+                <span class="btn-desc">21 of June 2026.</span>
+            </a>
+
+            <!-- BUTTON 2 -->
+            <a href="plan-hybrid.html" class="nav-button">
+                <span class="btn-label">Multisport</span>
+                <span class="btn-title">42k Firenze</span>
+                <span class="btn-desc">29 of November 2026.</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

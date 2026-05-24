@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5K Sub-22 Training Plan — 21 Jun</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --red: #E8200A;
+      --red-dark: #B01808;
+      --red-deep: #6B0E04;
+      --red-glow: rgba(232, 32, 10, 0.18);
+      --bg: #0A0A0A;
+      --bg2: #111111;
+      --bg3: #181818;
+      --bg4: #222222;
+      --text: #F0EDE8;
+      --text2: #A09890;
+      --text3: #5A5450;
+      --border: rgba(255, 255, 255, 0.07);
+      --border2: rgba(255, 255, 255, 0.12);
+      --green: #2ECC71;
+      --amber: #F5A623;
+      --blue: #4A9EE0;
+      --purple: #B57BFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .site-header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      gap: 12px;
+    }
+
+    .logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .progress-chip {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--red);
+      background: rgba(232, 32, 10, 0.1);
+      border: 1px solid rgba(232, 32, 10, 0.25);
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .countdown-chip {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--amber);
+      background: rgba(245, 166, 35, 0.1);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .hero-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(42px, 10vw, 84px);
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--red);
+      display: block;
+    }
+
+    .hero-title small {
+      font-size: 0.45em;
+      color: var(--text2);
+      font-weight: 500;
+      display: block;
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px;
+      max-width: 900px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+    }
+
+    .stat-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.9rem 0.75rem;
+      text-align: center;
+    }
+
+    .stat-box .sl {
+      font-size: 10px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+    }
+
+    .stat-box .sv {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--text);
+    }
+
+    .stat-box .ss {
+      font-size: 10px;
+      color: var(--text2);
+      margin-top: 2px;
+    }
+
+    .stat-box.accent {
+      border-color: rgba(232, 32, 10, 0.35);
+      background: rgba(232, 32, 10, 0.06);
+    }
+
+    .stat-box.accent .sv {
+      color: var(--red);
+    }
+
+    .stat-box.amber {
+      border-color: rgba(245, 166, 35, 0.35);
+      background: rgba(245, 166, 35, 0.06);
+    }
+
+    .stat-box.amber .sv {
+      color: var(--amber);
+    }
+
+    .plan-main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .phase {
+      margin-bottom: 2.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .phase-head {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .phase-head-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .phase-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .phase-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .phase-dates {
+      font-size: 12px;
+      color: var(--text3);
+      font-weight: 300;
+    }
+
+    .phase-focus {
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    .phase-note {
+      padding: 0.75rem 1.25rem;
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+    }
+
+    .phase-note strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* phase color themes */
+    .p-b1 .phase-head {
+      background: rgba(74, 158, 224, 0.05);
+    }
+
+    .p-b1 .phase-badge {
+      background: rgba(74, 158, 224, 0.12);
+      color: #4A9EE0;
+    }
+
+    .p-b1 .phase-note {
+      border-left: 3px solid #4A9EE0;
+    }
+
+    .p-b2 .phase-head {
+      background: rgba(232, 32, 10, 0.05);
+    }
+
+    .p-b2 .phase-badge {
+      background: rgba(232, 32, 10, 0.12);
+      color: var(--red);
+    }
+
+    .p-b2 .phase-note {
+      border-left: 3px solid var(--red);
+    }
+
+    .p-b3 .phase-head {
+      background: rgba(245, 166, 35, 0.05);
+    }
+
+    .p-b3 .phase-badge {
+      background: rgba(245, 166, 35, 0.12);
+      color: var(--amber);
+    }
+
+    .p-b3 .phase-note {
+      border-left: 3px solid var(--amber);
+    }
+
+    .weeks-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .week-item {
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+      user-select: none;
+    }
+
+    .week-item:last-child {
+      border-bottom: none;
+    }
+
+    .week-item:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .week-item.done {
+      opacity: 0.42;
+    }
+
+    .week-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.9rem 1.25rem;
+    }
+
+    .week-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1.5px solid var(--text3);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      font-size: 11px;
+      color: transparent;
+    }
+
+    .week-item.done .week-check {
+      border-color: var(--red);
+      background: var(--red);
+      color: white;
+    }
+
+    .week-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+
+    .week-item.done .week-num {
+      text-decoration: line-through;
+      color: var(--text3);
+    }
+
+    .week-dates-tag {
+      font-size: 11px;
+      color: var(--text3);
+      flex-shrink: 0;
+    }
+
+    .week-vol {
+      margin-left: auto;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text2);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2px 10px;
+      flex-shrink: 0;
+    }
+
+    .week-item.race-week .week-num {
+      color: var(--red);
+    }
+
+    .week-item.race-week:not(.done) .week-check {
+      border-color: var(--red);
+    }
+
+    .week-item.race-week .week-vol {
+      background: rgba(232, 32, 10, 0.1);
+      border-color: rgba(232, 32, 10, 0.3);
+      color: var(--red);
+    }
+
+    .week-item.test-week .week-vol {
+      background: rgba(74, 158, 224, 0.1);
+      border-color: rgba(74, 158, 224, 0.3);
+      color: #4A9EE0;
+    }
+
+    .expand-arrow {
+      font-size: 12px;
+      color: var(--text3);
+      transition: transform 0.2s;
+    }
+
+    .week-item.open .expand-arrow {
+      transform: rotate(90deg);
+    }
+
+    .week-item.done .expand-arrow {
+      display: none;
+    }
+
+    .week-body {
+      display: none;
+      padding: 0 1.25rem 1rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .week-item.open .week-body {
+      display: grid;
+    }
+
+    .week-item.done .week-body {
+      display: none !important;
+    }
+
+    @media (max-width: 520px) {
+      .week-body {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .workout-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+    }
+
+    .workout-card.race {
+      border-color: rgba(232, 32, 10, 0.4);
+      background: rgba(232, 32, 10, 0.06);
+      grid-column: 1 / -1;
+    }
+
+    .workout-card.test {
+      border-color: rgba(74, 158, 224, 0.4);
+      background: rgba(74, 158, 224, 0.06);
+      grid-column: 1 / -1;
+    }
+
+    .workout-card.span2 {
+      grid-column: 1 / -1;
+    }
+
+    .wc-type {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .wc-type.base {
+      color: #4A9EE0;
+    }
+
+    .wc-type.quality {
+      color: var(--red);
+    }
+
+    .wc-type.long {
+      color: var(--green);
+    }
+
+    .wc-type.optional {
+      color: var(--text3);
+    }
+
+    .wc-type.race {
+      color: var(--red);
+    }
+
+    .wc-type.test {
+      color: #4A9EE0;
+    }
+
+    .wc-type.cf {
+      color: var(--purple);
+    }
+
+    .wc-main {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .wc-sub {
+      font-size: 11px;
+      color: var(--text2);
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+
+    .done-banner {
+      display: none;
+      background: rgba(46, 204, 113, 0.08);
+      border: 1px solid rgba(46, 204, 113, 0.2);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 12px;
+      color: #2ECC71;
+      margin: 0 1.25rem 0.75rem;
+      font-weight: 500;
+    }
+
+    .week-item.done .done-banner {
+      display: block;
+    }
+
+    .cf-row {
+      grid-column: 1 / -1;
+      background: rgba(181, 123, 255, 0.05);
+      border: 1px solid rgba(181, 123, 255, 0.15);
+      border-radius: 8px;
+      padding: 0.5rem 0.9rem;
+      font-size: 12px;
+      color: var(--purple);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* intensity bar */
+    .intensity-bar {
+      display: flex;
+      gap: 3px;
+      margin-top: 6px;
+    }
+
+    .ibar-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--bg4);
+    }
+
+    .ibar-dot.on-low {
+      background: #2ECC71;
+    }
+
+    .ibar-dot.on-med {
+      background: var(--amber);
+    }
+
+    .ibar-dot.on-high {
+      background: var(--red);
+    }
+
+    .back-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--red);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 200;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+    }
+
+    /* race day big card */
+    .race-day-card {
+      background: var(--bg2);
+      border: 1px solid rgba(232, 32, 10, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .race-day-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .race-day-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(28px, 6vw, 52px);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .race-day-title span {
+      color: var(--red);
+    }
+
+    .race-day-sub {
+      font-size: 13px;
+      color: var(--text2);
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 48px;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .phase-head {
+        padding: 1rem;
+      }
+
+      .week-header {
+        padding: 0.75rem 1rem;
+      }
+
+      .week-body {
+        padding: 0 1rem 0.75rem;
+      }
+
+      .header-right {
+        gap: 6px;
+      }
+
+      .countdown-chip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">5K<span>.</span>SUB22</div>
+      <div class="header-right">
+        <div class="countdown-chip" id="countdown-chip">— días</div>
+        <div class="progress-chip" id="progress-chip">0 / 9 semanas</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-tag">Plan personalizado · 9 semanas</div>
+    <h1 class="hero-title">
+      Sub
+      <em>22:00</em>
+      <small>21 de junio · 5K</small>
+    </h1>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="sl">5K actual</div>
+      <div class="sv">23:09</div>
+      <div class="ss">VDOT 46</div>
+    </div>
+    <div class="stat-box accent">
+      <div class="sl">Objetivo</div>
+      <div class="sv">21:59</div>
+      <div class="ss">4:22/km</div>
+    </div>
+    <div class="stat-box amber">
+      <div class="sl">Race day</div>
+      <div class="sv">21 Jun</div>
+      <div class="ss">2026</div>
+    </div>
+    <div class="stat-box">
+      <div class="sl">Medio</div>
+      <div class="sv">1:47</div>
+      <div class="ss">5:05/km</div>
+    </div>
+    <div class="stat-box">
+      <div class="sl">Vol. actual</div>
+      <div class="sv">30 km</div>
+      <div class="ss">semana</div>
+    </div>
+    <div class="stat-box">
+      <div class="sl">Vol. pico</div>
+      <div class="sv">~38 km</div>
+      <div class="ss">S-4</div>
+    </div>
+  </div>
+
+  <div class="plan-main" id="plan">
+
+    <!-- RACE DAY BANNER -->
+    <div class="race-day-card">
+      <div class="race-day-label">Objetivo final</div>
+      <div class="race-day-title">5K <span>Sub-22:00</span></div>
+      <div class="race-day-sub">Ritmo objetivo: 4:22/km · 21 de junio de 2026</div>
+    </div>
+
+    <!-- ==================== BLOQUE 1 ==================== -->
+    <div class="section-label">Bloque 1 · Abr–May · Reconstrucción y test</div>
+    <div class="phase p-b1">
+      <div class="phase-head">
+        <div class="phase-head-row">
+          <span class="phase-badge">Bloque 1</span>
+          <span class="phase-name">Reconstrucción y test</span>
+        </div>
+        <div class="phase-dates">20 Abr – 10 May</div>
+        <div class="phase-focus">Recuperar energía y sensaciones tras la enfermedad. Test de carrera 5K el 25 de abril
+          para calibrar el punto de partida real.</div>
+      </div>
+      <div class="weeks-list">
+
+        <div class="week-item test-week" data-week="S7" onclick="toggleWeek(this)">
+          <div class="week-header">
+            <div class="week-check">✓</div>
+            <div class="week-num">S-7</div>
+            <div class="expand-arrow">▶</div>
+            <div class="week-dates-tag">20–26 Abr</div>
+            <div class="week-vol">🏁 TEST</div>
+          </div>
+          <div class="done-banner">✓ Semana completada</div>
+          <div class="week-body">
+            <div class="workout-card">
+              <div class="wc-type base">Entrenamiento 1</div>
+              <div class="wc-main">8 km @ 6:00/km</div>
+              <div class="wc-sub">Ritmo fácil, sensaciones primero</div>
+            </div>
+            <div class="workout-card test">
+              <div class="wc-type test">Carrera test — 25 Abr</div>
+              <div class="wc-main">5K Carrera (Test 1)</div>
+              <div class="wc-sub">A esfuerzo real — punto de partida del plan. Anota el tiempo exacto.</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type long">Tirada larga</div>
+              <div class="wc-main">12 km @ 6:15/km</div>
+              <div class="wc-sub">Suave, recuperación activa post-test</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type optional">Opcional</div>
+              <div class="wc-main">5 km suave</div>
+            </div>
+            <div class="cf-row">💜 CrossFit ×2 — normal</div>
+          </div>
+        </div>
+
+        <div class="week-item" data-week="S6" onclick="toggleWeek(this)">
+          <div class="week-header">
+            <div class="week-check">✓</div>
+            <div class="week-num">S-6</div>
+            <div class="expand-arrow">▶</div>
+            <div class="week-dates-tag">27 Abr – 3 May</div>
+            <div class="week-vol">~32 km</div>
+          </div>
+          <div class="done-banner">✓ Semana completada</div>
+          <div class="week-body">
+            <div class="workout-card">
+              <div class="wc-type base">Entrenamiento 1</div>
+              <div class="wc-main">10 km @ 5:55/km</div>
+              <div class="wc-sub">Ritmo base cómodo</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type quality">Calidad</div>
+              <div class="wc-main">Fartlek: 8 × (1' fuerte / 1' suave)</div>
+              <div class="wc-sub">Fuerte @ ~4:20/km · Suave @ 6:00/km · 2 km cal. + vuelta</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type long">Tirada larga</div>
+              <div class="wc-main">14 km @ 6:10/km</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type optional">Opcional</div>
+              <div class="wc-main">5 km suave</div>
+            </div>
+            <div class="cf-row">💜 CrossFit ×2</div>
+          </div>
+        </div>
+
+        <div class="week-item test-week" data-week="S5" onclick="toggleWeek(this)">
+          <div class="week-header">
+            <div class="week-check">✓</div>
+            <div class="week-num">S-5</div>
+            <div class="expand-arrow">▶</div>
+            <div class="week-dates-tag">4–10 May</div>
+            <div class="week-vol">🏁 5K</div>
+          </div>
+          <div class="done-banner">✓ Semana completada</div>
+          <div class="week-body">
+            <div class="workout-card">
+              <div class="wc-type base">Entrenamiento 1</div>
+              <div class="wc-main">9 km @ 5:50/km</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type quality">Calidad</div>
+              <div class="wc-main">6 × 800m @ 4:15/km</div>
+              <div class="wc-sub">Recuperación 90" · 2 km calentamiento previo</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type long">Tirada larga</div>
+              <div class="wc-main">12 km @ 6:00/km</div>
+            </div>
+            <div class="workout-card test">
+              <div class="wc-type test">Opcional — 10 May</div>
+              <div class="wc-main">5K a ritmo suave</div>
+              <div class="wc-sub">No a tope — sirve para sentir progreso, no es test</div>
+            </div>
+            <div class="cf-row">💜 CrossFit ×2</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="phase-note"><strong>Objetivo del bloque:</strong> reconstruir la base aeróbica y calibrar el nivel
+        real con la carrera del 25 de abril. No fuerces los ritmos — deja que las sensaciones guíen. El test del 25 Abr
+        es tu punto cero oficial.</div>
+    </div>
+
+    <!-- ==================== BLOQUE 2 ==================== -->
+    <div class="section-label">Bloque 2 · May · Potencia y pico de intensidad</div>
+    <div class="phase p-b2">
+      <div class="phase-head">
+        <div class="phase-head-row">
+          <span class="phase-badge">Bloque 2</span>
+          <span class="phase-name">Potencia y pico</span>
+        </div>
+        <div class="phase-dates">11 May – 7 Jun</div>
+        <div class="phase-focus">Pico de carga con S-4, deload activo en S-3 (Recovery & Rebuild) y resurgir del umbral
+          en S-2 para llegar afilado a la última fase. Escucha al cuerpo después del pico.</div>
+      </div>
+      <div class="weeks-list">
+
+        <div class="week-item test-week" data-week="S4" onclick="toggleWeek(this)">
+          <div class="week-header">
+            <div class="week-check">✓</div>
+            <div class="week-num">S-4</div>
+            <div class="expand-arrow">▶</div>
+            <div class="week-dates-tag">11–17 May</div>
+            <div class="week-vol">~38 km</div>
+          </div>
+          <div class="done-banner">✓ Semana completada</div>
+          <div class="week-body">
+            <div class="workout-card">
+              <div class="wc-type base">Entrenamiento 1</div>
+              <div class="wc-main">10 km progresivo</div>
+              <div class="wc-sub">Empieza @ 6:10 · termina @ 5:20 · progresión natural</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type quality">Calidad</div>
+              <div class="wc-main">5 × 1000m @ 4:20/km</div>
+              <div class="wc-sub">Recuperación 2' · El ritmo más exigente hasta ahora</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type long">Tirada larga</div>
+              <div class="wc-main">16 km @ 6:00/km</div>
+              <div class="wc-sub">La larga más larga del plan — aeróbico puro</div>
+            </div>
+            <div class="workout-card test">
+              <div class="wc-type test">Opcional — 17 May</div>
+              <div class="wc-main">5K a ritmo suave</div>
+              <div class="wc-sub">Control de sensaciones, no de tiempo</div>
+            </div>
+            <div class="cf-row">💜 CrossFit ×2 — evitar piernas el día antes de la larga</div>
+          </div>
+        </div>
+
+        <div class="week-item" data-week="S3" onclick="toggleWeek(this)">
+          <div class="week-header">
+            <div class="week-check">✓</div>
+            <div class="week-num">S-3</div>
+            <div class="expand-arrow">▶</div>
+            <div class="week-dates-tag">25–31 May · Recovery & Rebuild</div>
+            <div class="week-vol">~17 km</div>
+          </div>
+          <div class="done-banner">✓ Semana completada</div>
+          <div class="week-body">
+            <div class="workout-card">
+              <div class="wc-type base">Run 1 — Chill</div>
+              <div class="wc-main">5 km conversacional</div>
+              <div class="wc-sub">Ritmo cómodo, respiración fluida — escucha al cuerpo</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type base">Run 2 — Chill</div>
+              <div class="wc-main">7 km conversacional</div>
+              <div class="wc-sub">Sin agenda de ritmo, recupera y reconstruye</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type optional">Run 3 — Opcional</div>
+              <div class="wc-main">5 km chill</div>
+              <div class="wc-sub">Solo si las piernas piden más, todo suave</div>
+            </div>
+            <div class="cf-row">💜 CrossFit ×3 — semana de bajada del running</div>
+          </div>
+        </div>
+
+        <div class="week-item" data-week="S2" onclick="toggleWeek(this)">
+          <div class="week-header">
+            <div class="week-check">✓</div>
+            <div class="week-num">S-2</div>
+            <div class="expand-arrow">▶</div>
+            <div class="week-dates-tag">1–7 Jun · Threshold Resurgence</div>
+            <div class="week-vol">~28 km</div>
+          </div>
+          <div class="done-banner">✓ Semana completada</div>
+          <div class="week-body">
+            <div class="workout-card">
+              <div class="wc-type base">Run 1 — Threshold</div>
+              <div class="wc-main">8 km @ 5:50/km</div>
+              <div class="wc-sub">Ritmo umbral cómodo, sin pasarse</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type quality">Intervals — pico</div>
+              <div class="wc-main">3 × 2000m @ 4:35/km</div>
+              <div class="wc-sub">Recuperación 3' · Series largas, máximo estímulo del plan</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type long">Long Run</div>
+              <div class="wc-main">14 km @ 6:00/km</div>
+              <div class="wc-sub">Aeróbico puro — última larga antes del taper</div>
+            </div>
+            <div class="cf-row">💜 CrossFit ×2</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="phase-note"><strong>Clave del bloque:</strong> los intervalos de 1500m y 2000m construyen la base de
+        tolerancia al ritmo objetivo. Si alguna serie se descontrola, reduce el ritmo 5"/km — mejor terminar bien que
+        romper. Las carreras opcionales son de control, nunca a tope.</div>
+    </div>
+
+    <!-- ==================== BLOQUE 3 ==================== -->
+    <div class="section-label">Bloque 3 · Jun · Taper y día de récord</div>
+    <div class="phase p-b3">
+      <div class="phase-head">
+        <div class="phase-head-row">
+          <span class="phase-badge">Bloque 3</span>
+          <span class="phase-name">Taper — Máxima explosividad</span>
+        </div>
+        <div class="phase-dates">8–21 Jun</div>
+        <div class="phase-focus">Sharpening en S-1 (velocidad corta para activar) y taper final en S-0. Limpiar fatiga,
+          mantener intensidad breve y llegar fresco al 21 Jun. El trabajo ya está hecho.</div>
+      </div>
+      <div class="weeks-list">
+
+        <div class="week-item" data-week="S1" onclick="toggleWeek(this)">
+          <div class="week-header">
+            <div class="week-check">✓</div>
+            <div class="week-num">S-1</div>
+            <div class="expand-arrow">▶</div>
+            <div class="week-dates-tag">8–14 Jun · Speed & Sharpening</div>
+            <div class="week-vol">~18 km</div>
+          </div>
+          <div class="done-banner">✓ Semana completada</div>
+          <div class="week-body">
+            <div class="workout-card">
+              <div class="wc-type base">Run 1 — Easy</div>
+              <div class="wc-main">5 km @ 6:00/km</div>
+              <div class="wc-sub">Fácil — deja las piernas frescas</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type quality">Speed</div>
+              <div class="wc-main">8 × 400m @ 4:15/km</div>
+              <div class="wc-sub">Recuperación 60" · Rápido y cortito — activar, no cansar</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type long">Long Run</div>
+              <div class="wc-main">10 km @ 6:15/km</div>
+              <div class="wc-sub">Sin presión, solo millas suaves en las piernas</div>
+            </div>
+            <div class="cf-row">💜 CrossFit ×2</div>
+          </div>
+        </div>
+
+        <div class="week-item race-week" data-week="S0" onclick="toggleWeek(this)">
+          <div class="week-header">
+            <div class="week-check">✓</div>
+            <div class="week-num">S-0 — CARRERA</div>
+            <div class="expand-arrow">▶</div>
+            <div class="week-dates-tag">15–21 Jun · Race Week Taper</div>
+            <div class="week-vol">🏁 SUB-22</div>
+          </div>
+          <div class="done-banner">✓ ¡Sub-22 conseguido! Ahora toca el maratón.</div>
+          <div class="week-body">
+            <div class="workout-card">
+              <div class="wc-type base">Activación — Lunes/Mar</div>
+              <div class="wc-main">6 km + 4 strides</div>
+              <div class="wc-sub">Ritmo cómodo + 4 aceleraciones cortas para activar</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type quality">Pre-Race — Mié/Jue</div>
+              <div class="wc-main">4 km + 3 strides</div>
+              <div class="wc-sub">4 km suave + 3 aceleraciones 80m al 90% · Activa, no cansa</div>
+            </div>
+            <div class="workout-card race">
+              <div class="wc-type race">🎯 21 Jun — 5K SUB-22:00</div>
+              <div class="wc-main">Objetivo: 21:59 · Ritmo: 4:22/km</div>
+              <div class="wc-sub">Km 1: 4:25 (no salir lanzado) · Km 2–4: 4:20–4:22 · Km 5: vacía el depósito. Come
+                carbos desde el miércoles. Duerme bien jueves y viernes. El entrenamiento ya está hecho.</div>
+            </div>
+            <div class="workout-card">
+              <div class="wc-type optional">Descanso</div>
+              <div class="wc-main">Viernes y sábado: cero entreno</div>
+              <div class="wc-sub">Piernas frescas = segundos regalados el día de la carrera</div>
+            </div>
+            <div class="cf-row">💜 CrossFit ×1 — solo light / mobility</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="phase-note"><strong>Taper madness:</strong> Las piernas pesadas entre S-1 y el día de carrera son
+        normales — el cuerpo está cargando glucógeno. No corras más para "quitarte la sensación". Confía. El trabajo de
+        9 semanas no desaparece en 10 días.</div>
+    </div>
+
+    <!-- POST RACE NOTE -->
+    <div
+      style="background: rgba(46,204,113,0.05); border: 1px solid rgba(46,204,113,0.2); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+      <div
+        style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #2ECC71; margin-bottom: 6px;">
+        Después del 14 de junio</div>
+      <div style="font-size: 13px; color: var(--text2); line-height: 1.6;">Julio regenerativo: mantén 30–35 km/semana
+        sin calidad exigente. En agosto arranca el bloque maratón con base aeróbica sólida hacia Valencia el 29 de
+        noviembre. Tienes el plan completo en el archivo <strong style="color: var(--text);">marathon_plan.html</strong>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    const STORAGE_KEY = '5k_plan_done_v1';
+    const RACE_DATE = new Date('2026-06-21');
+
+    function loadDone() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch (e) { return []; }
+    }
+    function saveDone(arr) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); } catch (e) { }
+    }
+
+    let doneWeeks = loadDone();
+
+    function toggleWeek(el) {
+      const week = el.dataset.week;
+      if (el.classList.contains('done')) {
+        el.classList.remove('done');
+        el.classList.remove('open');
+        doneWeeks = doneWeeks.filter(w => w !== week);
+      } else if (el.classList.contains('open')) {
+        el.classList.remove('open');
+        el.classList.add('done');
+        if (!doneWeeks.includes(week)) doneWeeks.push(week);
+      } else {
+        el.classList.add('open');
+      }
+      saveDone(doneWeeks);
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const total = document.querySelectorAll('.week-item').length;
+      const done = document.querySelectorAll('.week-item.done').length;
+      document.getElementById('progress-chip').textContent = done + ' / ' + total + ' semanas';
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = Math.ceil((RACE_DATE - now) / (1000 * 60 * 60 * 24));
+      const chip = document.getElementById('countdown-chip');
+      if (diff > 0) chip.textContent = diff + ' días';
+      else if (diff === 0) chip.textContent = '¡HOY!';
+      else chip.textContent = 'completado';
+    }
+
+    function init() {
+      doneWeeks.forEach(week => {
+        const el = document.querySelector('[data-week="' + week + '"]');
+        if (el) el.classList.add('done');
+      });
+      updateProgress();
+      updateCountdown();
+    }
+
+    window.addEventListener('scroll', function () {
+      const btn = document.getElementById('back-top');
+      if (window.scrollY > 400) btn.classList.add('visible');
+      else btn.classList.remove('visible');
+    });
+
+    init();
+  </script>
+</body>
+
+</html>
