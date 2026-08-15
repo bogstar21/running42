@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plan Maratón v2 — Firenze 29 Nov</title>
+  <title>Plan Maratón v2 (Con Gimnasio) — Firenze 29 Nov</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500&display=swap"
     rel="stylesheet">
@@ -26,6 +26,7 @@
       --green: #2ECC71;
       --amber: #F5A623;
       --blue: #4A9EE0;
+      --purple: #B57BFF;
     }
 
     * {
@@ -299,40 +300,48 @@
       margin-top: 2px;
     }
 
-    /* INTRO CALLOUT */
-    .intro-callout {
+    /* GYM STRATEGY SECTION */
+    .gym-section {
       max-width: 900px;
       margin: 0 auto 2.5rem;
       padding: 0 1.5rem;
     }
 
-    .intro-callout .ic-box {
-      background: rgba(245, 166, 35, 0.05);
-      border: 1px solid rgba(245, 166, 35, 0.2);
-      border-left: 3px solid var(--amber);
-      border-radius: 12px;
-      padding: 1.1rem 1.4rem;
+    .gym-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
     }
 
-    .intro-callout .ic-title {
+    .gym-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--purple);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .gym-card .gt {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.08em;
+      font-size: 15px;
+      color: var(--purple);
+      margin-bottom: 4px;
       text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 6px;
+      letter-spacing: 0.04em;
     }
 
-    .intro-callout .ic-text {
-      font-size: 13px;
-      color: var(--text2);
-      line-height: 1.65;
-    }
-
-    .intro-callout .ic-text strong {
+    .gym-card .gm {
+      font-size: 12px;
       color: var(--text);
+      margin-bottom: 6px;
       font-weight: 500;
+    }
+
+    .gym-card .gd {
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.4;
     }
 
     /* MAIN PLAN */
@@ -412,70 +421,25 @@
     }
 
     /* Color themes per phase */
-    .p-regen .phase-head {
-      background: rgba(46, 204, 113, 0.05);
-    }
+    .p-regen .phase-head { background: rgba(46, 204, 113, 0.05); }
+    .p-regen .phase-badge { background: rgba(46, 204, 113, 0.12); color: #2ECC71; }
+    .p-regen .phase-note { border-left: 3px solid #2ECC71; }
 
-    .p-regen .phase-badge {
-      background: rgba(46, 204, 113, 0.12);
-      color: #2ECC71;
-    }
+    .p-base .phase-head { background: rgba(245, 166, 35, 0.05); }
+    .p-base .phase-badge { background: rgba(245, 166, 35, 0.12); color: #F5A623; }
+    .p-base .phase-note { border-left: 3px solid #F5A623; }
 
-    .p-regen .phase-note {
-      border-left: 3px solid #2ECC71;
-    }
+    .p-build .phase-head { background: rgba(232, 32, 10, 0.05); }
+    .p-build .phase-badge { background: rgba(232, 32, 10, 0.12); color: var(--red); }
+    .p-build .phase-note { border-left: 3px solid var(--red); }
 
-    .p-base .phase-head {
-      background: rgba(245, 166, 35, 0.05);
-    }
+    .p-peak .phase-head { background: rgba(232, 32, 10, 0.08); }
+    .p-peak .phase-badge { background: rgba(232, 32, 10, 0.18); color: #FF5540; }
+    .p-peak .phase-note { border-left: 3px solid #FF5540; }
 
-    .p-base .phase-badge {
-      background: rgba(245, 166, 35, 0.12);
-      color: #F5A623;
-    }
-
-    .p-base .phase-note {
-      border-left: 3px solid #F5A623;
-    }
-
-    .p-build .phase-head {
-      background: rgba(232, 32, 10, 0.05);
-    }
-
-    .p-build .phase-badge {
-      background: rgba(232, 32, 10, 0.12);
-      color: var(--red);
-    }
-
-    .p-build .phase-note {
-      border-left: 3px solid var(--red);
-    }
-
-    .p-peak .phase-head {
-      background: rgba(232, 32, 10, 0.08);
-    }
-
-    .p-peak .phase-badge {
-      background: rgba(232, 32, 10, 0.18);
-      color: #FF5540;
-    }
-
-    .p-peak .phase-note {
-      border-left: 3px solid #FF5540;
-    }
-
-    .p-taper .phase-head {
-      background: rgba(74, 158, 224, 0.05);
-    }
-
-    .p-taper .phase-badge {
-      background: rgba(74, 158, 224, 0.12);
-      color: #4A9EE0;
-    }
-
-    .p-taper .phase-note {
-      border-left: 3px solid #4A9EE0;
-    }
+    .p-taper .phase-head { background: rgba(74, 158, 224, 0.05); }
+    .p-taper .phase-badge { background: rgba(74, 158, 224, 0.12); color: #4A9EE0; }
+    .p-taper .phase-note { border-left: 3px solid #4A9EE0; }
 
     /* WEEK CARDS */
     .weeks-list {
@@ -634,33 +598,13 @@
       margin-bottom: 4px;
     }
 
-    .wc-type.base {
-      color: #4A9EE0;
-    }
-
-    .wc-type.quality {
-      color: var(--red);
-    }
-
-    .wc-type.long {
-      color: #2ECC71;
-    }
-
-    .wc-type.optional {
-      color: var(--text3);
-    }
-
-    .wc-type.race {
-      color: var(--red);
-    }
-
-    .wc-type.test {
-      color: #4A9EE0;
-    }
-
-    .wc-type.cf {
-      color: #B57BFF;
-    }
+    .wc-type.base { color: #4A9EE0; }
+    .wc-type.quality { color: var(--red); }
+    .wc-type.long { color: #2ECC71; }
+    .wc-type.optional { color: var(--text3); }
+    .wc-type.race { color: var(--red); }
+    .wc-type.test { color: #4A9EE0; }
+    .wc-type.gym { color: var(--purple); }
 
     .wc-main {
       font-size: 13px;
@@ -692,17 +636,9 @@
     }
 
     /* RACE WEEK special */
-    .week-item.race-week .week-num {
-      color: var(--red);
-    }
-
-    .week-item.race-week:not(.done) .week-check {
-      border-color: var(--red);
-    }
-
-    .week-item.test-week:not(.done) .week-check {
-      border-color: #4A9EE0;
-    }
+    .week-item.race-week .week-num { color: var(--red); }
+    .week-item.race-week:not(.done) .week-check { border-color: var(--red); }
+    .week-item.test-week:not(.done) .week-check { border-color: #4A9EE0; }
 
     /* SCROLL TO TOP */
     .back-top {
@@ -725,9 +661,7 @@
       z-index: 200;
     }
 
-    .back-top.visible {
-      opacity: 1;
-    }
+    .back-top.visible { opacity: 1; }
 
     /* DONE BANNER */
     .done-banner {
@@ -742,23 +676,7 @@
       font-weight: 500;
     }
 
-    .week-item.done .done-banner {
-      display: block;
-    }
-
-    /* Crossfit line */
-    .cf-row {
-      grid-column: 1 / -1;
-      background: rgba(181, 123, 255, 0.05);
-      border: 1px solid rgba(181, 123, 255, 0.15);
-      border-radius: 8px;
-      padding: 0.5rem 0.9rem;
-      font-size: 12px;
-      color: #B57BFF;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .week-item.done .done-banner { display: block; }
 
     /* RACE DAY BIG CARD */
     .race-day-card {
@@ -791,47 +709,18 @@
       margin-bottom: 0.5rem;
     }
 
-    .race-day-title span {
-      color: var(--red);
-    }
-
-    .race-day-sub {
-      font-size: 13px;
-      color: var(--text2);
-    }
+    .race-day-title span { color: var(--red); }
+    .race-day-sub { font-size: 13px; color: var(--text2); }
 
     @media (max-width: 600px) {
-      .hero-title {
-        font-size: 42px;
-      }
-
-      .stats-row {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .paces-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .phase-head {
-        padding: 1rem;
-      }
-
-      .week-header {
-        padding: 0.75rem 1rem;
-      }
-
-      .week-body {
-        padding: 0 1rem 0.75rem;
-      }
-
-      .header-right {
-        gap: 6px;
-      }
-
-      .countdown-chip {
-        display: none;
-      }
+      .hero-title { font-size: 42px; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); }
+      .paces-grid { grid-template-columns: repeat(2, 1fr); }
+      .phase-head { padding: 1rem; }
+      .week-header { padding: 0.75rem 1rem; }
+      .week-body { padding: 0 1rem 0.75rem; }
+      .header-right { gap: 6px; }
+      .countdown-chip { display: none; }
     }
   </style>
 </head>
@@ -849,11 +738,11 @@
   </header>
 
   <div class="hero">
-    <div class="hero-tag">Plan v2 · recalibrado 12 jul · 20 semanas</div>
+    <div class="hero-tag">Plan Maratón v2 (Con Gimnasio) · 20 semanas</div>
     <h1 class="hero-title">
       Firenze
       <em>29 Nov</em>
-      <small>Meta trabajo 3:55 · 5:35/km · stretch 3:45 · empieza 13 de julio</small>
+      <small>Meta trabajo 3:55 · 5:35/km · Stretch (A) 3:45 · Empieza 13 de julio</small>
     </h1>
   </div>
 
@@ -861,17 +750,17 @@
     <div class="stat-box">
       <div class="sl">5K actual</div>
       <div class="sv">24:30</div>
-      <div class="ss">4:54/km · Abr</div>
+      <div class="ss">4:54/km</div>
     </div>
     <div class="stat-box">
       <div class="sl">Media PB</div>
       <div class="sv">1:47</div>
-      <div class="ss">5:05/km · Elche</div>
+      <div class="ss">5:05/km</div>
     </div>
     <div class="stat-box">
       <div class="sl">Larga reciente</div>
       <div class="sv">12 km</div>
-      <div class="ss">11 jul · base baja</div>
+      <div class="ss">11 jul</div>
     </div>
     <div class="stat-box accent">
       <div class="sl">Meta trabajo</div>
@@ -881,7 +770,7 @@
     <div class="stat-box blue">
       <div class="sl">Stretch (A)</div>
       <div class="sv">3:45</div>
-      <div class="ss">5:20/km · si va el test</div>
+      <div class="ss">5:20/km</div>
     </div>
     <div class="stat-box amber">
       <div class="sl">Race day</div>
@@ -891,53 +780,60 @@
   </div>
 
   <div class="paces-section">
-    <div class="section-label">Ritmos de referencia · meta trabajo 3:55</div>
+    <div class="section-label">Ritmos de referencia · Meta 3:55</div>
     <div class="paces-grid">
       <div class="pace-card">
-        <div class="pn">Fácil / recuperación</div>
-        <div class="pv">6:10–6:40/km</div>
-        <div class="pd">La mayor parte del volumen</div>
+        <div class="pn">Fácil / Recuperación</div>
+        <div class="pv">6:10 – 6:40 /km</div>
+        <div class="pd">Regenerativo y base</div>
       </div>
       <div class="pace-card">
         <div class="pn">Rodaje largo</div>
-        <div class="pv">5:55–6:15/km</div>
-        <div class="pd">Base de la tirada larga</div>
+        <div class="pv">5:55 – 6:15 /km</div>
+        <div class="pd">Aeróbico continuo</div>
       </div>
       <div class="pace-card key">
-        <div class="pn">Ritmo maratón (MP)</div>
-        <div class="pv">5:35/km</div>
-        <div class="pd">El ritmo clave · 3:55</div>
+        <div class="pn">Ritmo Maratón (MP)</div>
+        <div class="pv">5:35 /km</div>
+        <div class="pd">Objetivo principal</div>
       </div>
       <div class="pace-card">
-        <div class="pn">Tempo / umbral</div>
-        <div class="pv">4:55–5:05/km</div>
-        <div class="pd">Duro pero controlado</div>
+        <div class="pn">Tempo / Umbral</div>
+        <div class="pv">4:55 – 5:05 /km</div>
+        <div class="pd">Ritmo exigente</div>
       </div>
       <div class="pace-card">
         <div class="pn">Intervalos 1000m</div>
-        <div class="pv">4:35/km</div>
-        <div class="pd">VO2 / velocidad</div>
+        <div class="pv">4:35 /km</div>
+        <div class="pd">VO2 Max</div>
       </div>
       <div class="pace-card">
         <div class="pn">Intervalos 800m</div>
-        <div class="pv">4:25/km</div>
-        <div class="pd">Piernas rápidas</div>
+        <div class="pv">4:25 /km</div>
+        <div class="pd">Velocidad / Reactividad</div>
       </div>
     </div>
   </div>
 
-  <div class="intro-callout">
-    <div class="ic-box">
-      <div class="ic-title">⟳ Por qué reescribimos el plan</div>
-      <div class="ic-text">Junio y julio han sido de <strong>mantenimiento, no de progresión</strong>: ~20 km/semana
-        durante 5+ semanas y una tirada larga que no ha pasado de <strong>12 km</strong>. El plan anterior ya te pedía
-        48 km/sem y tiradas de 20 km — <strong>saltar ahí sería lesión segura</strong>. Así que lo tiramos y
-        reconstruimos desde donde estás de verdad. La buena noticia: del 13 de julio al 29 de noviembre hay
-        <strong>20 semanas exactas</strong>, un ciclo de maratón completo. Tu velocidad está bien (5K 24:30, media 1:47);
-        lo que falta es <strong>kilometraje y tirada larga</strong>. Por eso la meta de trabajo baja a
-        <strong>3:55 (5:35/km)</strong> y dejamos <strong>3:45 como objetivo stretch</strong>, a confirmar con una
-        <strong>media maratón de control en la S-14 (mediados de octubre)</strong>. Si ese día vuelas, subimos.
-        Mantenemos tu <strong>HIIT/CrossFit</strong> porque lo cumples — lo dosificamos, no lo quitamos.</div>
+  <!-- ESTRATEGIA DE GIMNASIO -->
+  <div class="gym-section">
+    <div class="section-label">Estrategia del Trabajo de Fuerza en Gimnasio</div>
+    <div class="gym-grid">
+      <div class="gym-card">
+        <div class="gt">Día 1 — Torso + Core</div>
+        <div class="gm">Upper Body & Estabilidad</div>
+        <div class="gd">Espalda, Pecho, Hombros, Bíceps, Tríceps y Abdomen/Core. Mantiene masa muscular en tren superior sin fatigar las piernas para la carrera.</div>
+      </div>
+      <div class="gym-card">
+        <div class="gt">Día 2 — Piernas + Cadena Posterior</div>
+        <div class="gm">Lower Body Funcional</div>
+        <div class="gd">Cuádriceps, Isquiotibiales, Glúteos, Gemelos, Sóleos y Estabilización de Cadera. Fuerza funcional, resistencia articular y prevención de lesiones (intercambiable por 1 día de CrossFit).</div>
+      </div>
+      <div class="gym-card">
+        <div class="gt">Sesión Opcional</div>
+        <div class="gm">Pierna ligera + Cinta</div>
+        <div class="gd">20–30 min de trabajo ligero/accesorio (glúteo medio, gemelos, movilidad) + 3–5 km de rodaje suave en cinta (6:30–7:00/km regenerativo).</div>
+      </div>
     </div>
   </div>
 
@@ -945,13 +841,13 @@
 
     <!-- RACE DAY BANNER -->
     <div class="race-day-card">
-      <div class="race-day-label">Objetivo final</div>
+      <div class="race-day-label">Objetivo Final</div>
       <div class="race-day-title">Maratón <span>Firenze</span></div>
-      <div class="race-day-sub">42,195 km · Meta 3:55 (5:35/km) · stretch 3:45 · 29 de noviembre de 2026</div>
+      <div class="race-day-sub">42,195 km · Meta 3:55 (5:35/km) · Stretch 3:45 · 29 de noviembre de 2026</div>
     </div>
 
-    <!-- ==================== BLOQUE 1: RECONSTRUCCIÓN ==================== -->
-    <div class="section-label">Bloque 1 · 13 Jul – 9 Ago · Reconstruir la base</div>
+    <!-- BLOQUE 1 -->
+    <div class="section-label">Bloque 1 · Reconstruir la Base (13 Jul – 9 Ago)</div>
     <div class="phase p-regen">
       <div class="phase-head">
         <div class="phase-head-row">
@@ -959,9 +855,7 @@
           <span class="phase-name">Reconstruir la base</span>
         </div>
         <div class="phase-dates">13 Jul – 9 Ago · 4 semanas</div>
-        <div class="phase-focus">Pasar de 3 a 4 días de carrera y subir el volumen con cabeza (~10%/sem). Tirada larga
-          de 12 → 18 km. Reintroducir ritmo suave (fartlek/tempo corto), nada de series duras aún. CrossFit ×2 sin
-          llegar al fallo de piernas.</div>
+        <div class="phase-focus">Subir volumen progresivamente (~10%/sem) y aumentar la tirada larga de 12 a 18 km. Gimnasio / CrossFit ×2 por semana.</div>
       </div>
       <div class="weeks-list">
 
@@ -975,22 +869,12 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje + strides</div>
-              <div class="wc-main">6 km @ 6:10</div>
-              <div class="wc-sub">+ 4 strides de 80m suaves al final</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Fartlek suave</div>
-              <div class="wc-main">6 × (1' fuerte / 1' suave)</div>
-              <div class="wc-sub">Fuerte @ ~5:00 · 2 km cal + vuelta · ~5 km</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">13 km @ 6:10</div>
-              <div class="wc-sub">Cómodo, conversacional — tu larga de referencia</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2 — sin AMRAP de piernas el día antes de la larga</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje + Strides</div><div class="wc-main">6 km @ 6:10</div><div class="wc-sub">+ 4 strides de 80m</div></div>
+            <div class="workout-card"><div class="wc-type quality">Fartlek suave</div><div class="wc-main">6 × (1' fuerte @ ~5:00 / 1' suave)</div><div class="wc-sub">Total ~5 km</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">13 km @ 6:10</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Cadena Posterior</div><div class="wc-sub">O sesión de CrossFit</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna ligera + 3-4 km cinta suave</div></div>
           </div>
         </div>
 
@@ -1004,20 +888,12 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">7 km @ 6:05</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Cambios de ritmo</div>
-              <div class="wc-main">5 × (3' @ 5:00 / 2' suave)</div>
-              <div class="wc-sub">2 km cal + vuelta · ~6 km</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">15 km @ 6:10</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">7 km @ 6:05</div></div>
+            <div class="workout-card"><div class="wc-type quality">Cambios de ritmo</div><div class="wc-main">5 × (3' @ 5:00 / 2' suave)</div><div class="wc-sub">Total ~6 km</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">15 km @ 6:10</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Cadena Posterior</div><div class="wc-sub">O sesión de CrossFit</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna ligera + 3-4 km cinta suave</div></div>
           </div>
         </div>
 
@@ -1031,21 +907,12 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">8 km @ 6:05</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Tempo corto</div>
-              <div class="wc-main">15' @ 5:00/km</div>
-              <div class="wc-sub">2 km cal + 15' + 2 km vuelta · primer tempo</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">16 km @ 6:05</div>
-              <div class="wc-sub">Últimos 3 km @ 5:35 (primer contacto MP)</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">8 km @ 6:05</div></div>
+            <div class="workout-card"><div class="wc-type quality">Tempo corto</div><div class="wc-main">2 km cal + 15' @ 5:00/km + 2 km vuelta</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">16 km @ 6:05</div><div class="wc-sub">Últimos 3 km @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Cadena Posterior</div><div class="wc-sub">O sesión de CrossFit</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna ligera + 3-4 km cinta suave</div></div>
           </div>
         </div>
 
@@ -1054,37 +921,24 @@
             <div class="week-check">✓</div>
             <div class="week-num">S-4</div>
             <div class="expand-arrow">▶</div>
-            <div class="week-dates-tag">3–9 Ago · descarga</div>
+            <div class="week-dates-tag">3–9 Ago · Descarga</div>
             <div class="week-vol">~24 km</div>
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje + strides</div>
-              <div class="wc-main">6 km @ 6:10</div>
-              <div class="wc-sub">+ 5 strides de 100m</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Fartlek suave</div>
-              <div class="wc-main">6 × (1' fuerte / 1')</div>
-              <div class="wc-sub">~5 km · piernas frescas</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">13 km @ 6:05</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje + Strides</div><div class="wc-main">6 km @ 6:10</div><div class="wc-sub">+ 5 strides de 100m</div></div>
+            <div class="workout-card"><div class="wc-type quality">Fartlek suave</div><div class="wc-main">6 × (1' fuerte / 1' suave)</div><div class="wc-sub">Total ~5 km</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">13 km @ 6:05</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core (Baja intensidad)</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Cadena Posterior (Baja intensidad / Movilidad)</div></div>
           </div>
         </div>
 
       </div>
-      <div class="phase-note"><strong>Objetivo del bloque:</strong> correr 4 días/semana sin molestias y llegar a una
-        larga de 16–18 km cómoda. Si un día el cuerpo pide parar, párate — venimos de meses irregulares, no hay prisa.
-        Al final de S-4 deberías estar listo para la base real.</div>
     </div>
 
-    <!-- ==================== BLOQUE 2: BASE + RESISTENCIA ==================== -->
-    <div class="section-label">Bloque 2 · 10 Ago – 13 Sep · Base + resistencia</div>
+    <!-- BLOQUE 2 -->
+    <div class="section-label">Bloque 2 · Base Aeróbica + Resistencia (10 Ago – 13 Sep)</div>
     <div class="phase p-base">
       <div class="phase-head">
         <div class="phase-head-row">
@@ -1092,8 +946,7 @@
           <span class="phase-name">Base aeróbica + resistencia</span>
         </div>
         <div class="phase-dates">10 Ago – 13 Sep · 5 semanas</div>
-        <div class="phase-focus">Subir de ~32 a ~42 km/sem. Tirada larga 18 → 24 km con los primeros km a ritmo
-          maratón. Introducir intervalos de 1000m y tempo. Verano en Valencia: corre de madrugada o de noche.</div>
+        <div class="phase-focus">Incrementar volumen de ~32 a ~42 km/sem. Tirada larga 18 a 24 km incorporando tramos a ritmo maratón e intervalos. Gimnasio / CrossFit ×2.</div>
       </div>
       <div class="weeks-list">
 
@@ -1107,21 +960,12 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">8 km @ 6:00</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Tempo</div>
-              <div class="wc-main">18' @ 4:58/km</div>
-              <div class="wc-sub">2 km cal + 18' + vuelta</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">18 km @ 6:05</div>
-              <div class="wc-sub">Últimos 4 km @ 5:35</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">8 km @ 6:00</div></div>
+            <div class="workout-card"><div class="wc-type quality">Tempo</div><div class="wc-main">2 km cal + 18' @ 4:58/km + vuelta</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">18 km @ 6:05</div><div class="wc-sub">Últimos 4 km @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div><div class="wc-sub">Espalda, Pecho, Hombros, Brazos</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Cadena Posterior</div><div class="wc-sub">O sesión de CrossFit</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna ligera + 3-4 km cinta suave</div></div>
           </div>
         </div>
 
@@ -1135,25 +979,12 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">9 km @ 6:00</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Intervalos</div>
-              <div class="wc-main">5 × 1000m @ 4:35</div>
-              <div class="wc-sub">Recuperación 2' · 2 km cal previo</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">20 km @ 6:05</div>
-              <div class="wc-sub">Últimos 5 km @ 5:35</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type optional">Opcional</div>
-              <div class="wc-main">4 km muy suave</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">9 km @ 6:00</div></div>
+            <div class="workout-card"><div class="wc-type quality">Intervalos</div><div class="wc-main">2 km cal + 5 × 1000m @ 4:35</div><div class="wc-sub">Rec. 2'</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">20 km @ 6:05</div><div class="wc-sub">Últimos 5 km @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Cadena Posterior</div><div class="wc-sub">O sesión de CrossFit</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna ligera + 4 km cinta suave</div></div>
           </div>
         </div>
 
@@ -1167,25 +998,12 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">10 km @ 5:55</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Tempo doble</div>
-              <div class="wc-main">2 × 15' @ 4:58</div>
-              <div class="wc-sub">Recuperación 3' entre bloques</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">22 km @ 6:00</div>
-              <div class="wc-sub">Últimos 6 km @ 5:35</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type optional">Opcional</div>
-              <div class="wc-main">4 km suave</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">10 km @ 5:55</div></div>
+            <div class="workout-card"><div class="wc-type quality">Tempo doble</div><div class="wc-main">2 × 15' @ 4:58</div><div class="wc-sub">Rec. 3'</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">22 km @ 6:00</div><div class="wc-sub">Últimos 6 km @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Cadena Posterior</div><div class="wc-sub">O sesión de CrossFit</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna ligera + 4 km cinta suave</div></div>
           </div>
         </div>
 
@@ -1194,25 +1012,16 @@
             <div class="week-check">✓</div>
             <div class="week-num">S-8</div>
             <div class="expand-arrow">▶</div>
-            <div class="week-dates-tag">31 Ago – 6 Sep · descarga</div>
+            <div class="week-dates-tag">31 Ago – 6 Sep · Descarga</div>
             <div class="week-vol">~30 km</div>
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">8 km @ 6:05</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Fartlek MP</div>
-              <div class="wc-main">6 × (2' MP / 1' suave)</div>
-              <div class="wc-sub">@ 5:35 en los bloques fuertes</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">16 km @ 6:05</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">8 km @ 6:05</div></div>
+            <div class="workout-card"><div class="wc-type quality">Fartlek MP</div><div class="wc-main">6 × (2' @ 5:35 MP / 1' suave)</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">16 km @ 6:05</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core (Descarga)</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Movilidad</div><div class="wc-sub">Sin pesos pesados</div></div>
           </div>
         </div>
 
@@ -1226,36 +1035,20 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">10 km @ 5:55</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Intervalos</div>
-              <div class="wc-main">6 × 1000m @ 4:32</div>
-              <div class="wc-sub">Recuperación 2'</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">24 km @ 6:00</div>
-              <div class="wc-sub">Km 16–22 @ 5:35</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type optional">Opcional</div>
-              <div class="wc-main">4 km suave</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×2</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">10 km @ 5:55</div></div>
+            <div class="workout-card"><div class="wc-type quality">Intervalos</div><div class="wc-main">6 × 1000m @ 4:32</div><div class="wc-sub">Rec. 2'</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">24 km @ 6:00</div><div class="wc-sub">Km 16–22 @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Piernas + Cadena Posterior</div><div class="wc-sub">O sesión de CrossFit</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna ligera + 4 km cinta suave</div></div>
           </div>
         </div>
 
       </div>
-      <div class="phase-note"><strong>Regla del 10%:</strong> no subas más de ~10% de volumen por semana. Con el calor,
-        suma 15–20"/km sin culpa y prioriza hidratación. La tirada larga con km a ritmo maratón ya es el entrenamiento
-        más importante de la semana — protégela.</div>
     </div>
 
-    <!-- ==================== BLOQUE 3: ESPECÍFICO ==================== -->
-    <div class="section-label">Bloque 3 · 14 Sep – 18 Oct · Específico maratón + test</div>
+    <!-- BLOQUE 3 -->
+    <div class="section-label">Bloque 3 · Específico Maratón (14 Sep – 18 Oct)</div>
     <div class="phase p-build">
       <div class="phase-head">
         <div class="phase-head-row">
@@ -1263,8 +1056,7 @@
           <span class="phase-name">Específico maratón</span>
         </div>
         <div class="phase-dates">14 Sep – 18 Oct · 5 semanas</div>
-        <div class="phase-focus">Tiradas largas de 24–28 km con bloques a ritmo maratón. Umbral e intervalos largos.
-          Semana clave: <strong>media maratón de control en S-14</strong> para recalibrar la meta. Volumen hacia ~48 km.</div>
+        <div class="phase-focus">Tiradas largas de 24–28 km con bloques a ritmo maratón. Test de Media Maratón en S-14. Gimnasio / CrossFit adaptado a la carga de carrera.</div>
       </div>
       <div class="weeks-list">
 
@@ -1278,21 +1070,12 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">10 km @ 5:55</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Tempo</div>
-              <div class="wc-main">25' @ 4:55/km</div>
-              <div class="wc-sub">2 km cal + 25' + vuelta calma</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">26 km @ 5:55</div>
-              <div class="wc-sub">Km 18–24 @ 5:35</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×1 — bajar intensidad</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">10 km @ 5:55</div></div>
+            <div class="workout-card"><div class="wc-type quality">Tempo</div><div class="wc-main">2 km cal + 25' @ 4:55/km + vuelta</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">26 km @ 5:55</div><div class="wc-sub">Km 18–24 @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2 / CF</div><div class="wc-main">Pierna ligera / Movilidad</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna accesoria + 3 km cinta suave</div></div>
           </div>
         </div>
 
@@ -1306,25 +1089,12 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">12 km @ 5:50</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Intervalos largos</div>
-              <div class="wc-main">5 × 1600m @ 4:50</div>
-              <div class="wc-sub">Recuperación 2:30 — umbral de lactato</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">28 km @ 5:55</div>
-              <div class="wc-sub">Km 20–26 @ 5:35</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type optional">Opcional</div>
-              <div class="wc-main">4 km suave</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×1</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">12 km @ 5:50</div></div>
+            <div class="workout-card"><div class="wc-type quality">Intervalos largos</div><div class="wc-main">5 × 1600m @ 4:50</div><div class="wc-sub">Rec. 2:30</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">28 km @ 5:55</div><div class="wc-sub">Km 20–26 @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2 / CF</div><div class="wc-main">Trabajo funcional / Isquios y Glúteo</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">Pierna accesoria + 4 km cinta suave</div></div>
           </div>
         </div>
 
@@ -1333,26 +1103,16 @@
             <div class="week-check">✓</div>
             <div class="week-num">S-12</div>
             <div class="expand-arrow">▶</div>
-            <div class="week-dates-tag">28 Sep – 4 Oct · descarga</div>
+            <div class="week-dates-tag">28 Sep – 4 Oct · Descarga</div>
             <div class="week-vol">~34 km</div>
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">8 km @ 6:00</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">MP Run</div>
-              <div class="wc-main">12 km: 2 cal + 10 @ 5:35</div>
-              <div class="wc-sub">Bloque continuo a ritmo maratón</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">18 km @ 6:00</div>
-              <div class="wc-sub">Suave — preparando el test de S-14</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×1 — solo movilidad y core</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">8 km @ 6:00</div></div>
+            <div class="workout-card"><div class="wc-type quality">MP Run</div><div class="wc-main">12 km (2 cal + 10 @ 5:35 MP)</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">18 km @ 6:00</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2 / CF</div><div class="wc-main">Solo movilidad y estabilidad</div></div>
           </div>
         </div>
 
@@ -1366,21 +1126,11 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">10 km @ 5:55</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Intervalos</div>
-              <div class="wc-main">8 × 800m @ 4:25</div>
-              <div class="wc-sub">Recuperación 90" — pico VO2max</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">24 km @ 5:55</div>
-              <div class="wc-sub">Km 16–22 @ 5:35</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×1</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">10 km @ 5:55</div></div>
+            <div class="workout-card"><div class="wc-type quality">Intervalos</div><div class="wc-main">8 × 800m @ 4:25</div><div class="wc-sub">Rec. 90"</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">24 km @ 5:55</div><div class="wc-sub">Km 16–22 @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2 / CF</div><div class="wc-main">Pierna + Fuerza reactiva</div></div>
           </div>
         </div>
 
@@ -1389,39 +1139,23 @@
             <div class="week-check">✓</div>
             <div class="week-num">S-14</div>
             <div class="expand-arrow">▶</div>
-            <div class="week-dates-tag">12–18 Oct · descarga + media</div>
+            <div class="week-dates-tag">12–18 Oct · Test Media</div>
             <div class="week-vol">🏁 21K</div>
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">8 km @ 6:00</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type base">Activación</div>
-              <div class="wc-main">5 km + 4 strides</div>
-              <div class="wc-sub">2 días antes de la media</div>
-            </div>
-            <div class="workout-card test">
-              <div class="wc-type test">🏁 Media maratón de control — 21,1 km</div>
-              <div class="wc-main">A tope (test) o controlada a 5:10–5:15</div>
-              <div class="wc-sub">La prueba de fuego. Sustituye a la tirada larga. Con tu tiempo recalibramos la meta:
-                si terminas cómodo por debajo de 1:50, el <strong>3:45</strong> vuelve a la mesa; si cuesta, fijamos
-                3:55–4:00. Anota el dato exacto.</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×1 — solo core</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">8 km @ 6:00</div></div>
+            <div class="workout-card"><div class="wc-type base">Activación</div><div class="wc-main">5 km + 4 strides</div><div class="wc-sub">2 días antes del test</div></div>
+            <div class="workout-card test"><div class="wc-type test">🏁 Media Maratón de Control (21,1 km)</div><div class="wc-main">A tope o controlada a 5:10–5:15</div><div class="wc-sub">Define el objetivo final de carrera.</div></div>
+            <div class="workout-card span2"><div class="wc-type gym">Gimnasio</div><div class="wc-main">Solo Torso + Core</div><div class="wc-sub">Sin fatiga previa en piernas</div></div>
           </div>
         </div>
 
       </div>
-      <div class="phase-note"><strong>La media de S-14 manda:</strong> es el punto donde el plan deja de ser una
-        suposición y pasa a ser un objetivo con datos. Mejor ajustar el ritmo ahora que reventar en el km 32 el día de
-        la carrera. Desde este bloque, CrossFit baja a 1 sesión: prioriza movilidad de cadera y core.</div>
     </div>
 
-    <!-- ==================== BLOQUE 4: PICO ==================== -->
-    <div class="section-label">Bloque 4 · 19 Oct – 8 Nov · Pico</div>
+    <!-- BLOQUE 4 -->
+    <div class="section-label">Bloque 4 · Pico — La Tirada Reina (19 Oct – 8 Nov)</div>
     <div class="phase p-peak">
       <div class="phase-head">
         <div class="phase-head-row">
@@ -1429,8 +1163,7 @@
           <span class="phase-name">Pico — La tirada reina</span>
         </div>
         <div class="phase-dates">19 Oct – 8 Nov · 3 semanas</div>
-        <div class="phase-focus">Las dos tiradas más largas del plan (30 y 32 km) y el bloque continuo a ritmo maratón
-          más exigente. Volumen pico ~50 km. CrossFit: solo core y movilidad, cero cargas de piernas.</div>
+        <div class="phase-focus">Tiradas picos de 27 a 32 km y máximo volumen semanal (~50 km). Mantenimiento de fuerza y core.</div>
       </div>
       <div class="weeks-list">
 
@@ -1444,22 +1177,11 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">10 km @ 5:55</div>
-              <div class="wc-sub">Recuperar de la media primero</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Tempo</div>
-              <div class="wc-main">2 × 12' @ 4:55</div>
-              <div class="wc-sub">Recuperación 3'</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">27 km @ 5:55</div>
-              <div class="wc-sub">Km 18–24 @ 5:35</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×1 — solo movilidad y core</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">10 km @ 5:55</div></div>
+            <div class="workout-card"><div class="wc-type quality">Tempo</div><div class="wc-main">2 × 12' @ 4:55</div><div class="wc-sub">Rec. 3'</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">27 km @ 5:55</div><div class="wc-sub">Km 18–24 @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Movilidad + Excéntrico ligero</div></div>
           </div>
         </div>
 
@@ -1468,30 +1190,17 @@
             <div class="week-check">✓</div>
             <div class="week-num">S-16</div>
             <div class="expand-arrow">▶</div>
-            <div class="week-dates-tag">26 Oct – 1 Nov · pico</div>
+            <div class="week-dates-tag">26 Oct – 1 Nov · Semana Pico</div>
             <div class="week-vol">~50 km</div>
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">12 km @ 5:50</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Intervalos</div>
-              <div class="wc-main">6 × 1000m @ 4:32</div>
-              <div class="wc-sub">Recuperación 90"</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">32 km @ 5:55</div>
-              <div class="wc-sub">Km 22–28 @ 5:35 — la tirada reina del plan</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type optional">Opcional</div>
-              <div class="wc-main">4 km suave</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×1 — solo movilidad (semana de 32 km)</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">12 km @ 5:50</div></div>
+            <div class="workout-card"><div class="wc-type quality">Intervalos</div><div class="wc-main">6 × 1000m @ 4:32</div><div class="wc-sub">Rec. 90"</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada Reina</div><div class="wc-main">32 km @ 5:55</div><div class="wc-sub">Km 22–28 @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core (Suave)</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Solo movilidad y activación</div></div>
+            <div class="workout-card"><div class="wc-type optional">Opcional</div><div class="wc-main">4 km muy suave en cinta</div></div>
           </div>
         </div>
 
@@ -1500,46 +1209,32 @@
             <div class="week-check">✓</div>
             <div class="week-num">S-17</div>
             <div class="expand-arrow">▶</div>
-            <div class="week-dates-tag">2–8 Nov · última larga</div>
+            <div class="week-dates-tag">2–8 Nov</div>
             <div class="week-vol">~42 km</div>
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">10 km @ 5:55</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">MP Run</div>
-              <div class="wc-main">16 km: 2 cal + 14 @ 5:35</div>
-              <div class="wc-sub">El bloque continuo a MP más largo — ensayo de ritmo de carrera</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada larga</div>
-              <div class="wc-main">24 km @ 5:55</div>
-              <div class="wc-sub">Última tirada larga de verdad</div>
-            </div>
-            <div class="cf-row">💜 CrossFit ×1 — solo core</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">10 km @ 5:55</div></div>
+            <div class="workout-card"><div class="wc-type quality">MP Run</div><div class="wc-main">16 km (2 cal + 14 @ 5:35 MP)</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada larga</div><div class="wc-main">24 km @ 5:55</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Fuerza postural suave</div></div>
           </div>
         </div>
 
       </div>
-      <div class="phase-note"><strong>La tirada de 32 km (S-16) es el pilar de toda la preparación.</strong> No busques
-        ritmo, busca terminarla — el tiempo en pie es lo que cuenta. Si llegas tocado a una larga, recorta los km a MP,
-        nunca la distancia total. Desde aquí, CrossFit solo core, movilidad y tren superior.</div>
     </div>
 
-    <!-- ==================== BLOQUE 5: TAPER ==================== -->
-    <div class="section-label">Bloque 5 · 9 – 29 Nov · Taper — Llegar fresco</div>
+    <!-- BLOQUE 5 -->
+    <div class="section-label">Bloque 5 · Taper — Llegar Fresco (9 – 29 Nov)</div>
     <div class="phase p-taper">
       <div class="phase-head">
         <div class="phase-head-row">
           <span class="phase-badge">Bloque 5</span>
-          <span class="phase-name">Taper — Confía en el proceso</span>
+          <span class="phase-name">Taper — Llegar fresco</span>
         </div>
         <div class="phase-dates">9 – 29 Nov · 3 semanas</div>
-        <div class="phase-focus">Reducción progresiva del volumen (40–60%) manteniendo algo de intensidad. El cuerpo
-          absorbe 17 semanas de trabajo. Piernas pesadas = buena señal. Carga de carbohidratos la última semana.</div>
+        <div class="phase-focus">Reducción progresiva de volumen (40–60%) priorizando la recuperación.</div>
       </div>
       <div class="weeks-list">
 
@@ -1553,21 +1248,11 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">8 km @ 5:55</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Intervalos</div>
-              <div class="wc-main">6 × 800m @ 4:25</div>
-              <div class="wc-sub">Recuperación 90" — recordar las piernas rápidas</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada media</div>
-              <div class="wc-main">18 km @ 5:55</div>
-              <div class="wc-sub">Últimos 4 km @ 5:35</div>
-            </div>
-            <div class="cf-row">💜 CrossFit opcional — solo core suave</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">8 km @ 5:55</div></div>
+            <div class="workout-card"><div class="wc-type quality">Intervalos</div><div class="wc-main">6 × 800m @ 4:25</div><div class="wc-sub">Rec. 90"</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada media</div><div class="wc-main">18 km @ 5:55</div><div class="wc-sub">Últimos 4 km @ 5:35 MP</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 1</div><div class="wc-main">Torso + Core ligero</div></div>
+            <div class="workout-card"><div class="wc-type gym">Gimnasio Día 2</div><div class="wc-main">Movilidad (Opcional)</div></div>
           </div>
         </div>
 
@@ -1581,21 +1266,10 @@
           </div>
           <div class="done-banner">✓ Semana completada</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Rodaje base</div>
-              <div class="wc-main">6 km @ 6:00</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Intervalos ligeros</div>
-              <div class="wc-main">4 × 1000m @ 4:35</div>
-              <div class="wc-sub">Recuperación 2' — suelto y ligero</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type long">Tirada corta</div>
-              <div class="wc-main">13 km @ 6:00</div>
-              <div class="wc-sub">3 km @ 5:35 en el medio</div>
-            </div>
-            <div class="cf-row">💜 Sin CrossFit</div>
+            <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">6 km @ 6:00</div></div>
+            <div class="workout-card"><div class="wc-type quality">Intervalos ligeros</div><div class="wc-main">4 × 1000m @ 4:35</div><div class="wc-sub">Rec. 2'</div></div>
+            <div class="workout-card"><div class="wc-type long">Tirada corta</div><div class="wc-main">13 km @ 6:00</div><div class="wc-sub">3 km @ 5:35 en medio</div></div>
+            <div class="workout-card span2"><div class="wc-type gym">Gimnasio</div><div class="wc-main">Sin pesas pesadas (Solo movilidad / estiramientos)</div></div>
           </div>
         </div>
 
@@ -1607,39 +1281,17 @@
             <div class="week-dates-tag">23–29 Nov · Race Week</div>
             <div class="week-vol">🏁 RACE</div>
           </div>
-          <div class="done-banner">✓ ¡Maratón Firenze completado — FELICIDADES!</div>
+          <div class="done-banner">✓ ¡Maratón Firenze completado!</div>
           <div class="week-body">
-            <div class="workout-card">
-              <div class="wc-type base">Lunes</div>
-              <div class="wc-main">5 km suave @ 6:10</div>
-              <div class="wc-sub">Piernas sueltas, cero presión</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type quality">Miércoles</div>
-              <div class="wc-main">4 km + 4 × 100m strides</div>
-              <div class="wc-sub">Activar las piernas, muy ligero</div>
-            </div>
-            <div class="workout-card">
-              <div class="wc-type optional">Jue / Vie</div>
-              <div class="wc-main">Descanso o 3 km suave</div>
-              <div class="wc-sub">Carga de carbohidratos desde el jueves</div>
-            </div>
-            <div class="workout-card race">
-              <div class="wc-type race">🏁 MARATÓN FIRENZE — 29 Noviembre</div>
-              <div class="wc-main">Meta: 3:55 (5:35/km) · Plan A: 3:45 (5:20) · Plan B: seguir fuerte y terminar</div>
-              <div class="wc-sub">Sal CONTROLADO: primeros 5 km 10" más lento que tu objetivo, nunca más rápido. Geles
-                cada 35–40' desde el km 8. El km 30 es donde empieza la carrera real — si guardaste, ahí decides si
-                aprietas hacia el 3:45. En tu primer maratón, cruzar la meta fuerte ya es un triunfo enorme.</div>
-            </div>
-            <div class="cf-row">💜 Sin CrossFit toda la semana</div>
+            <div class="workout-card"><div class="wc-type base">Lunes</div><div class="wc-main">5 km suave @ 6:10</div></div>
+            <div class="workout-card"><div class="wc-type quality">Miércoles</div><div class="wc-main">4 km + 4 × 100m strides</div></div>
+            <div class="workout-card"><div class="wc-type optional">Jue / Vie</div><div class="wc-main">Descanso o 3 km suave</div></div>
+            <div class="workout-card race"><div class="wc-type race">🏁 MARATÓN FIRENZE — 29 Noviembre</div><div class="wc-main">42,195 km</div><div class="wc-sub">Estrategia: Salir controlado (primeros 5 km 10" más lento). Geles cada 35–40' desde el km 8.</div></div>
+            <div class="workout-card span2"><div class="wc-type gym">Gimnasio</div><div class="wc-main">Sin gimnasio ni CrossFit toda la semana</div></div>
           </div>
         </div>
 
       </div>
-      <div class="phase-note"><strong>Semana de carrera:</strong> nada de CrossFit, carga de carbohidratos desde el
-        jueves, duerme bien jueves y viernes (la noche clave es la del viernes, no la víspera). El <em>taper madness</em>
-        —piernas pesadas, mal humor, dudas— es NORMAL y señal de que el cuerpo carga glucógeno. No corras de más para
-        "quitártelo". El trabajo de 17 semanas no desaparece en 3.</div>
     </div>
 
   </div>
