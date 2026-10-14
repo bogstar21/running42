@@ -712,6 +712,82 @@
     .race-day-title span { color: var(--red); }
     .race-day-sub { font-size: 13px; color: var(--text2); }
 
+    /* INFORME DEL ENTRENADOR */
+    .report-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+    .rep-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 0.4rem;
+      text-align: center;
+    }
+    .rep-box .sl {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 3px;
+    }
+    .rep-box .sv {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--text);
+    }
+    .rep-box .ss { font-size: 9px; color: var(--text2); margin-top: 2px; }
+    .rep-box.green .sv { color: var(--green); }
+    .rep-box.red .sv { color: var(--red); }
+    .report-note { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+    .report-note p { margin-bottom: 0.6rem; }
+    .report-note p:last-child { margin-bottom: 0; }
+    .report-note strong { color: var(--text); font-weight: 600; }
+    .rep-goals {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+      margin-top: 1rem;
+    }
+    .goal-pill {
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      border-radius: 8px;
+      padding: 0.6rem 0.8rem;
+    }
+    .goal-pill .gl {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 2px;
+    }
+    .goal-pill .gv { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: var(--text); }
+    .goal-pill .gs { font-size: 10px; color: var(--text2); margin-top: 2px; }
+    .goal-pill.half { border-color: rgba(46, 204, 113, 0.35); background: rgba(46, 204, 113, 0.06); }
+    .goal-pill.half .gv { color: var(--green); }
+    .goal-pill.b { border-color: rgba(232, 32, 10, 0.35); background: rgba(232, 32, 10, 0.06); }
+    .goal-pill.b .gv { color: var(--red); }
+    .goal-pill.a { border-color: rgba(74, 158, 224, 0.35); background: rgba(74, 158, 224, 0.06); }
+    .goal-pill.a .gv { color: var(--blue); }
+    .goal-pill.c { border-color: rgba(245, 166, 35, 0.35); background: rgba(245, 166, 35, 0.06); }
+    .goal-pill.c .gv { color: var(--amber); }
+
     @media (max-width: 600px) {
       .hero-title { font-size: 42px; }
       .stats-row { grid-template-columns: repeat(3, 1fr); }
@@ -759,8 +835,8 @@
     </div>
     <div class="stat-box">
       <div class="sl">Larga reciente</div>
-      <div class="sv">12 km</div>
-      <div class="ss">11 jul</div>
+      <div class="sv">28 km</div>
+      <div class="ss">27 sep</div>
     </div>
     <div class="stat-box accent">
       <div class="sl">Meta trabajo</div>
@@ -844,6 +920,29 @@
       <div class="race-day-label">Objetivo Final</div>
       <div class="race-day-title">Maratón <span>Firenze</span></div>
       <div class="race-day-sub">42,195 km · Meta 3:55 (5:35/km) · Stretch 3:45 · 29 de noviembre de 2026</div>
+    </div>
+
+    <!-- INFORME DEL ENTRENADOR -->
+    <div class="section-label">Informe · Actualización 14 Oct · 13 de 20 semanas</div>
+    <div class="report-card">
+      <div class="report-grid">
+        <div class="rep-box"><div class="sl">Adherencia</div><div class="sv">84%</div><div class="ss">~379/453 km</div></div>
+        <div class="rep-box"><div class="sl">Media sem.</div><div class="sv">29 km</div><div class="ss">pico ~46</div></div>
+        <div class="rep-box green"><div class="sl">Tirada máx</div><div class="sv">28 km</div><div class="ss">27 sep · 6:03</div></div>
+        <div class="rep-box"><div class="sl">Umbral</div><div class="sv">5:07</div><div class="ss">8,6 km · 25 sep</div></div>
+        <div class="rep-box"><div class="sl">MP probado</div><div class="sv">5:36</div><div class="ss">8,8 km · 30 sep</div></div>
+        <div class="rep-box red"><div class="sl">Velocidad</div><div class="sv">4:38</div><div class="ss">5,2 km · 6 oct</div></div>
+      </div>
+      <div class="report-note">
+        <p><strong>Veredicto:</strong> Base de resistencia sólida — la escalera de tiradas largas está cumplida (11 → 18 → 22 → 24 → 28 km) aunque el volumen fue ~84% de lo previsto, con S-3 casi en blanco. La velocidad (5K ≈ 23:10) y el umbral (5:07) dan para 3:45–3:50; lo que aún falta es resistencia <em>a ritmo</em>: la mayoría de las largas a 6:00+ con poco ritmo maratón sostenido dentro de ellas.</p>
+        <p><strong>Foco de las últimas 7 semanas:</strong> ejecutar los bloques de MP (5:35) DENTRO de las tiradas largas (S-15 y S-16) y proteger la tirada reina de 32 km. Eso decide si 3:50 es real. No perseguir el volumen perdido; la base ya está construida.</p>
+      </div>
+      <div class="rep-goals">
+        <div class="goal-pill half"><div class="gl">Media · próx. semana</div><div class="gv">1:50</div><div class="gs">controlada · 5:12/km</div></div>
+        <div class="goal-pill b"><div class="gl">Meta carrera (B)</div><div class="gv">3:55</div><div class="gs">5:35/km · el plan</div></div>
+        <div class="goal-pill a"><div class="gl">Sueño (A)</div><div class="gv">3:50</div><div class="gs">si media + reina confirman</div></div>
+        <div class="goal-pill c"><div class="gl">Suelo (C)</div><div class="gv">&lt;4:00</div><div class="gs">gran día igualmente</div></div>
+      </div>
     </div>
 
     <!-- BLOQUE 1 -->
@@ -1146,7 +1245,7 @@
           <div class="week-body">
             <div class="workout-card"><div class="wc-type base">Rodaje base</div><div class="wc-main">8 km @ 6:00</div></div>
             <div class="workout-card"><div class="wc-type base">Activación</div><div class="wc-main">5 km + 4 strides</div><div class="wc-sub">2 días antes del test</div></div>
-            <div class="workout-card test"><div class="wc-type test">🏁 Media Maratón de Control (21,1 km)</div><div class="wc-main">A tope o controlada a 5:10–5:15</div><div class="wc-sub">Define el objetivo final de carrera.</div></div>
+            <div class="workout-card test"><div class="wc-type test">🏁 Media Maratón de Control (21,1 km)</div><div class="wc-main">Objetivo: 1:50 controlada (5:12/km)</div><div class="wc-sub">Pasar 10 km a 5:12–5:15; si va suelto, bajar la 2ª mitad. Regla: ≤1:49 → meta 3:50 · 1:50–1:53 → 3:55 · &gt;1:54 → 3:58–4:00. No salir por debajo de 5:10 los primeros 3 km. Define el objetivo final.</div></div>
             <div class="workout-card span2"><div class="wc-type gym">Gimnasio</div><div class="wc-main">Solo Torso + Core</div><div class="wc-sub">Sin fatiga previa en piernas</div></div>
           </div>
         </div>
@@ -1286,7 +1385,7 @@
             <div class="workout-card"><div class="wc-type base">Lunes</div><div class="wc-main">5 km suave @ 6:10</div></div>
             <div class="workout-card"><div class="wc-type quality">Miércoles</div><div class="wc-main">4 km + 4 × 100m strides</div></div>
             <div class="workout-card"><div class="wc-type optional">Jue / Vie</div><div class="wc-main">Descanso o 3 km suave</div></div>
-            <div class="workout-card race"><div class="wc-type race">🏁 MARATÓN FIRENZE — 29 Noviembre</div><div class="wc-main">42,195 km</div><div class="wc-sub">Estrategia: Salir controlado (primeros 5 km 10" más lento). Geles cada 35–40' desde el km 8.</div></div>
+            <div class="workout-card race"><div class="wc-type race">🏁 MARATÓN FIRENZE — 29 Noviembre</div><div class="wc-main">42,195 km · Meta B 3:55 · A 3:50 · suelo sub-4</div><div class="wc-sub">Salir a 5:35–5:38 (nada de 5:20), mantener firme hasta el km 30 y, si vas bien, bajar hacia 5:25. Geles cada 35–40' desde el km 8.</div></div>
             <div class="workout-card span2"><div class="wc-type gym">Gimnasio</div><div class="wc-main">Sin gimnasio ni CrossFit toda la semana</div></div>
           </div>
         </div>
