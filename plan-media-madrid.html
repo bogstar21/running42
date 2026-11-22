@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reset 21K — Media Maratón 4 Abr</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E8200A;--bg:#0A0A0A;--bg2:#111;--bg3:#181818;--tx:#F0EDE8;--tx2:#A09890;--tx3:#6A645F;--bd:rgba(255,255,255,.08);--gr:#2ECC71;--am:#F5A623;--bl:#4A9EE0;--pu:#B57BFF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'Barlow',-apple-system,Segoe UI,sans-serif;overflow-x:hidden;min-height:100vh}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:150}
+.hd{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:var(--bg);border-bottom:1px solid var(--bd);padding:0 1.25rem}
+.hd-in{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.logo{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;font-size:22px;letter-spacing:.04em;white-space:nowrap}
+.logo span{color:var(--red)}
+.chips{display:flex;gap:8px}
+.chip{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;padding:4px 12px;border-radius:20px;white-space:nowrap;color:var(--red);background:rgba(232,32,10,.1);border:1px solid rgba(232,32,10,.28)}
+.chip.am{color:var(--am);background:rgba(245,166,35,.1);border-color:rgba(245,166,35,.28)}
+.hero,.stats,.main,.paces{max-width:900px;margin-left:auto;margin-right:auto;padding-left:1.25rem;padding-right:1.25rem}
+.hero{padding-top:2.5rem;padding-bottom:1.5rem}
+.tag{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:8px;margin-bottom:.7rem}
+.tag::before{content:"";width:20px;height:2px;background:var(--red)}
+h1{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;font-size:clamp(44px,11vw,84px);line-height:.92;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--red);display:block}
+h1 small{display:block;font-size:.42em;color:var(--tx2);font-weight:500;margin-top:6px;letter-spacing:.04em}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:1.5rem}
+.st{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:.85rem .6rem;text-align:center}
+.st .l{font-family:'Barlow Condensed',Impact,sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);margin-bottom:3px}
+.st .v{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:800;font-size:22px}
+.st .s{font-size:10px;color:var(--tx2);margin-top:2px}
+.st.a{border-color:rgba(232,32,10,.35);background:rgba(232,32,10,.06)}.st.a .v{color:var(--red)}
+.lbl{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);margin-bottom:.7rem;display:flex;align-items:center;gap:8px}
+.lbl::after{content:"";flex:1;height:1px;background:var(--bd)}
+.paces{margin-bottom:2rem}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.pc{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:.6rem .85rem}
+.pc .n{font-size:11px;color:var(--tx2);margin-bottom:2px}.pc .v{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:700;font-size:16px}.pc .d{font-size:10px;color:var(--tx3);margin-top:2px}
+.main{padding-bottom:4rem}
+.ph{margin-bottom:2.2rem;border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+.ph-h{padding:1.1rem 1.4rem;border-bottom:1px solid var(--bd)}
+.ph-r{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bd{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+.pn{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:800;font-size:20px;text-transform:uppercase}
+.pd{font-size:12px;color:var(--tx3);margin-top:3px}.pf{font-size:12px;color:var(--tx2);line-height:1.5;margin-top:3px}
+.note{padding:.75rem 1.25rem;font-size:12px;color:var(--tx2);line-height:1.6;background:var(--bg2);border-top:1px solid var(--bd)}
+.note b{color:var(--tx);font-weight:500}
+.c1 .ph-h{background:rgba(74,158,224,.05)}.c1 .bd{background:rgba(74,158,224,.13);color:var(--bl)}.c1 .note{border-left:3px solid var(--bl)}
+.c2 .ph-h{background:rgba(46,204,113,.05)}.c2 .bd{background:rgba(46,204,113,.13);color:var(--gr)}.c2 .note{border-left:3px solid var(--gr)}
+.c3 .ph-h{background:rgba(245,166,35,.05)}.c3 .bd{background:rgba(245,166,35,.13);color:var(--am)}.c3 .note{border-left:3px solid var(--am)}
+.c4 .ph-h{background:rgba(232,32,10,.06)}.c4 .bd{background:rgba(232,32,10,.14);color:var(--red)}.c4 .note{border-left:3px solid var(--red)}
+.c5 .ph-h{background:rgba(181,123,255,.05)}.c5 .bd{background:rgba(181,123,255,.13);color:var(--pu)}.c5 .note{border-left:3px solid var(--pu)}
+.wk{border-bottom:1px solid var(--bd);cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.wk:last-child{border-bottom:none}.wk:hover{background:rgba(255,255,255,.02)}.wk.done{opacity:.42}
+.wh{display:flex;align-items:center;gap:12px;padding:.9rem 1.25rem}
+.ck{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--tx3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent}
+.wk.done .ck{background:var(--red);border-color:var(--red);color:#fff}
+.wn{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:800;font-size:16px;letter-spacing:.05em}
+.wk.done .wn{text-decoration:line-through;color:var(--tx3)}
+.wd{font-size:11px;color:var(--tx3)}
+.wv{margin-left:auto;font-family:'Barlow Condensed',Impact,sans-serif;font-weight:700;font-size:13px;color:var(--tx2);background:var(--bg3);border:1px solid var(--bd);border-radius:20px;padding:2px 10px;white-space:nowrap}
+.wk.race .wn{color:var(--red)}.wk.race .wv{color:var(--red);background:rgba(232,32,10,.1);border-color:rgba(232,32,10,.3)}
+.wk.test .wv{color:var(--bl);background:rgba(74,158,224,.1);border-color:rgba(74,158,224,.3)}
+.ar{font-size:11px;color:var(--tx3);transition:transform .2s}.wk.open .ar{transform:rotate(90deg)}.wk.done .ar{display:none}
+.wb{display:none;padding:0 1.25rem 1rem;grid-template-columns:1fr 1fr;gap:8px}
+.wk.open .wb{display:grid}.wk.done .wb{display:none!important}
+.wc{background:var(--bg3);border:1px solid var(--bd);border-radius:8px;padding:.7rem .9rem}
+.wc.full{grid-column:1/-1}
+.wc.race{grid-column:1/-1;border-color:rgba(232,32,10,.4);background:rgba(232,32,10,.06)}
+.wc.test{grid-column:1/-1;border-color:rgba(74,158,224,.4);background:rgba(74,158,224,.06)}
+.wt{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.wt.base{color:var(--bl)}.wt.quality{color:var(--red)}.wt.long{color:var(--gr)}.wt.opt{color:var(--tx3)}.wt.race{color:var(--red)}.wt.test{color:var(--bl)}
+.wm{font-size:13px;font-weight:500;line-height:1.5}.ws{font-size:11px;color:var(--tx2);margin-top:3px;line-height:1.5}
+.cf{grid-column:1/-1;background:rgba(181,123,255,.05);border:1px solid rgba(181,123,255,.16);border-radius:8px;padding:.5rem .9rem;font-size:12px;color:var(--pu)}
+.db{display:none;margin:0 1.25rem .75rem;background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.2);border-radius:8px;padding:.5rem 1rem;font-size:12px;color:var(--gr);font-weight:500}
+.wk.done .db{display:block}
+.top{position:fixed;right:1.25rem;bottom:calc(1.25rem + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;border:none;font-size:18px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:200}
+.top.on{opacity:1;pointer-events:auto}
+@media(max-width:560px){.wb{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}.chip.am{display:none}.ph-h{padding:1rem}.wh{padding:.75rem 1rem}.wb{padding:0 1rem .75rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hd-in">
+<div class="logo">RESET<span>.</span>21K</div>
+<div class="chips"><div class="chip am" id="cd">— días</div><div class="chip" id="pg">0 / 18 semanas</div></div>
+</div></header>
+
+<div class="hero">
+<div class="tag">Plan post-maratón · 18 semanas</div>
+<h1>Media<em>4 Abril</em><small>Recuperar · volver con ganas · bajar de 5:00/km</small></h1>
+</div>
+
+<div class="stats">
+<div class="st"><div class="l">Media PB</div><div class="v">1:47</div><div class="s">5:05/km</div></div>
+<div class="st"><div class="l">Maratón</div><div class="v">~4:00</div><div class="s">29 Nov</div></div>
+<div class="st a"><div class="l">Meta B</div><div class="v">&lt;1:45:30</div><div class="s">sub-5:00/km</div></div>
+<div class="st a"><div class="l">Meta A</div><div class="v">1:43:30</div><div class="s">4:55/km</div></div>
+<div class="st"><div class="l">Estructura</div><div class="v">3 + 2</div><div class="s">runs + CrossFit</div></div>
+<div class="st"><div class="l">Vol. pico</div><div class="v">~41 km</div><div class="s">S-2</div></div>
+</div>
+
+<div class="paces">
+<div class="lbl">Ritmos de referencia</div>
+<div class="pg">
+<div class="pc"><div class="n">Fácil / recuperación</div><div class="v">6:00–6:30 /km</div><div class="d">Casi todo el volumen</div></div>
+<div class="pc"><div class="n">Tirada larga</div><div class="v">5:55–6:15 /km</div><div class="d">Aeróbico continuo</div></div>
+<div class="pc"><div class="n">Ritmo media (HMP)</div><div class="v">4:55 /km</div><div class="d">Objetivo A · B: 4:58</div></div>
+<div class="pc"><div class="n">Tempo / umbral</div><div class="v">4:40–4:48 /km</div><div class="d">Duro pero controlado</div></div>
+<div class="pc"><div class="n">Intervalos 1000 m</div><div class="v">4:28 /km</div><div class="d">VO2 / velocidad</div></div>
+<div class="pc"><div class="n">Series 2000 m</div><div class="v">4:38–4:40 /km</div><div class="d">Resistencia a ritmo</div></div>
+</div>
+</div>
+
+<div class="main" id="plan"></div>
+<button class="top" id="top" aria-label="Subir">↑</button>
+
+<script>
+var B=function(c,l,m,s){return{c:c,l:l,m:m,s:s}};
+var BASE=function(m,s){return B('base','Rodaje base',m,s)};
+var Q=function(m,s,l){return B('quality',l||'Calidad',m,s)};
+var L=function(m,s,l){return B('long',l||'Tirada larga',m,s)};
+var O=function(m,s){return B('opt','Opcional',m,s)};
+
+var PLAN=[
+{k:'c1',b:'Bloque 1',n:'Recuperación post-maratón',d:'30 Nov – 3 Ene · 5 semanas',
+f:'Sin objetivos de ritmo. Dos primeras semanas casi parado, luego correr por sensaciones. Últimas dos de diciembre: vacaciones, sin CrossFit, solo correr a gusto.',
+note:'<b>Regla de oro:</b> si las piernas pesan, se acorta o se sale a caminar. Nada de recuperar volumen perdido. La base de 20 semanas de maratón sigue ahí.',
+w:[
+{id:'R1',n:'R1 — Zombi',d:'30 Nov – 6 Dic',v:'0–8 km',r:[BASE('Descanso o 3 km @ 7:00','Solo si las piernas lo piden'),BASE('4 km @ 6:50','A partir del jueves, muy suave'),L('Paseo 45–60 min','Sin correr · movilidad, piscina o bici suave','Larga (andando)')],cf:'Sin CrossFit — descanso total'},
+{id:'R2',n:'R2 — Mínimo',d:'7–13 Dic',v:'~15 km',r:[BASE('4 km @ 6:45'),BASE('5 km @ 6:40','Sin mirar el reloj'),L('6 km @ 6:35','Lo más largo de la semana','Rodaje largo')],cf:'CrossFit ×1 — técnica y peso ligero. Sin saltos, sin sprints, piernas suaves'},
+{id:'R3',n:'R3 — Transición',d:'14–20 Dic',v:'~19 km',r:[BASE('5 km @ 6:30'),BASE('6 km @ 6:25','Al final 4 rectas de 15 s sueltas'),L('8 km @ 6:30')],cf:'CrossFit ×1–2 — vuelves poco a poco. Sin WOD de piernas el día antes de correr'},
+{id:'R4',n:'R4 — Vacaciones',d:'21–27 Dic',v:'~23 km',r:[BASE('6 km @ 6:25'),BASE('7 km @ 6:20','Por sensaciones, por donde más te guste'),L('10 km @ 6:20','Súper a gusto, sin reloj si quieres','Rodaje largo')],cf:'Sin CrossFit — vacaciones. Opcional: paseos y 10 min de core en casa'},
+{id:'R5',n:'R5 — Libre',d:'28 Dic – 3 Ene',v:'~25 km',r:[BASE('6 km @ 6:20'),BASE('8 km @ 6:15','Últimos 5 min con 4 rectas sueltas'),L('11 km @ 6:15','Última larga tranquila','Rodaje largo')],cf:'Sin CrossFit — el 4 de enero vuelve la estructura'}
+]},
+{k:'c2',b:'Bloque 2',n:'Reconstruir la base',d:'4–31 Ene · 4 semanas',
+f:'Volumen de ~28 a ~33 km, larga de 12 a 15 km. Primeros toques de ritmo suave. CrossFit ×2 vuelve a ser parte de la semana.',
+note:'<b>CrossFit:</b> ×2, mínimo ×1 si no llegas. Evita piernas pesadas el día antes de la calidad o la larga. S-9 es semana de descarga.',
+w:[
+{id:'S-12',n:'S-12',d:'4–10 Ene',v:'~28 km',r:[BASE('8 km @ 6:15'),Q('8 km @ 6:10 + 6 rectas de 20 s','Las rectas al 90 %, recuperación andando','Rectas'),L('12 km @ 6:10')],cf:'CrossFit ×2 — retoma con cargas moderadas'},
+{id:'S-11',n:'S-11',d:'11–17 Ene',v:'~30 km',r:[BASE('8 km @ 6:10'),Q('Fartlek: 6 × (1 min @ 4:50 / 1 min suave)','2 km calentar + 2 km volver · ~8 km','Fartlek'),L('13 km @ 6:10')],cf:'CrossFit ×2'},
+{id:'S-10',n:'S-10',d:'18–24 Ene',v:'~33 km',r:[BASE('9 km @ 6:05'),Q('Tempo: 2 × 8 min @ 4:45','Recuperación 2 min · 2 km calentar + 2 km volver','Primer tempo'),L('15 km @ 6:05')],cf:'CrossFit ×2'},
+{id:'S-9',n:'S-9 — descarga',d:'25–31 Ene',v:'~27 km',r:[BASE('8 km @ 6:10'),Q('8 km suaves + 6 rectas de 20 s','Mantener piernas vivas','Rectas'),L('12 km @ 6:10')],cf:'CrossFit ×2 (mín. ×1) — semana para absorber'}
+]},
+{k:'c3',b:'Bloque 3',n:'Umbral y VO2',d:'1–28 Feb · 4 semanas',
+f:'Aquí se gana la rebaja de ritmo: tempo, series de 1000 m y larga progresiva. Termina con un test de 5K para calibrar el objetivo de la media.',
+note:'<b>Cómo leer el test 5K:</b> ~23:00 encaja con sub-5:00 en la media (1:45). ~22:30 encaja con 4:55/km (1:43:30). Con ese dato ajustamos los ritmos del último bloque.',
+w:[
+{id:'S-8',n:'S-8',d:'1–7 Feb',v:'~35 km',r:[BASE('9 km @ 6:05'),Q('Tempo: 3 × 10 min @ 4:42','Recuperación 2 min · ~10 km con calentamiento','Tempo'),L('16 km @ 6:05')],cf:'CrossFit ×2'},
+{id:'S-7',n:'S-7',d:'8–14 Feb',v:'~36 km',r:[BASE('9 km @ 6:00'),Q('6 × 1000 m @ 4:28','Recuperación 90 s · ~10 km con calentamiento','Series'),L('17 km @ 6:05','Últimos 3 km @ 5:20')],cf:'CrossFit ×2'},
+{id:'S-6',n:'S-6',d:'15–21 Feb',v:'~38 km',r:[BASE('10 km @ 6:00'),Q('Tempo continuo: 25 min @ 4:45','~10 km con calentamiento','Tempo largo'),L('18 km @ 6:00','Constante, sin apretar')],cf:'CrossFit ×2 — evita piernas fuertes antes de la larga'},
+{id:'S-5',n:'S-5 — test 5K',d:'22–28 Feb',k:'test',v:'🏁 5K',r:[BASE('8 km @ 6:10'),{c:'test',l:'Test — 5K a tope',m:'Objetivo: 22:30–23:15 (4:30–4:39/km)',s:'2 km calentar + rectas. Sal a 4:40 y mantén. Anota el tiempo exacto.'},L('14 km @ 6:05','Semana ligera por el test')],cf:'CrossFit ×1–2 — nada de piernas 3 días antes del test'}
+]},
+{k:'c4',b:'Bloque 4',n:'Específico media maratón',d:'1–21 Mar · 3 semanas',
+f:'Kilómetros a ritmo de media (4:55) dentro de las largas y en sesiones propias. S-2 es el ensayo general y el pico de volumen.',
+note:'<b>Si una serie se descontrola</b>, baja 5 s/km. Mejor terminar la sesión fino que romperla. En S-2 el último CrossFit pesado de piernas debe quedar a 7 días de la carrera como mínimo.',
+w:[
+{id:'S-4',n:'S-4',d:'1–7 Mar',v:'~41 km',r:[BASE('10 km @ 6:00'),Q('4 × 2000 m @ 4:40','Recuperación 2 min · ~12 km con calentamiento','Series largas'),L('19 km @ 6:00','Km 9–15 @ 5:00 (6 km a ritmo media)')],cf:'CrossFit ×2'},
+{id:'S-3',n:'S-3',d:'8–14 Mar',v:'~38 km',r:[BASE('8 km @ 6:05'),Q('2 × 5 km @ 4:55','Recuperación 3 min · 2 km calentar + 2 km volver · ~14 km','Ritmo de media'),L('16 km @ 6:00','Tranquila, semana cargada de calidad')],cf:'CrossFit ×2 (mín. ×1)'},
+{id:'S-2',n:'S-2 — ensayo',d:'15–21 Mar',v:'~41 km',r:[BASE('10 km @ 6:00'),Q('20 min @ 4:45 + 4 × 400 m @ 4:15','Recuperación 90 s entre series · ~10 km','Mixta'),L('21 km @ 6:00','Km 8–18 @ 4:58–5:00 (10 km a ritmo media) — tirada reina')],cf:'CrossFit ×1 — último de piernas pesado; después solo torso y core'}
+]},
+{k:'c5',b:'Bloque 5',n:'Taper y día de carrera',d:'22 Mar – 4 Abr · 2 semanas',
+f:'Bajar volumen un 25–40 % manteniendo un poco de ritmo. Llegar fresco: las piernas pesadas son buena señal.',
+note:'<b>Estrategia de carrera:</b> km 1–3 @ 5:00, km 4–17 @ 4:53–4:55, últimos 3 km a lo que quede. Carbohidratos desde el jueves y sin experimentos con comida ni zapatillas.',
+w:[
+{id:'S-1',n:'S-1',d:'22–28 Mar',v:'~29 km',r:[BASE('8 km @ 6:00'),Q('5 × 1000 m @ 4:30','Recuperación 2 min · ~9 km','Series cortas'),L('12 km @ 6:00','Últimos 3 km @ 4:55','Rodaje medio')],cf:'CrossFit ×1 — solo torso y core, sin piernas'},
+{id:'S-0',n:'S-0 — CARRERA',d:'29 Mar – 4 Abr',k:'race',v:'🏁 21K',r:[BASE('6 km @ 6:10','Lunes o martes, muy suave'),Q('5 km + 4 rectas de 100 m','Jueves. Activar, no cansar','Activación'),{c:'race',l:'4 Abril — Media Maratón',m:'Meta B: sub-1:45:30 (4:59/km) · Meta A: 1:43:30 (4:55/km)',s:'Km 1–3 @ 5:00 · km 4–17 @ 4:53–4:55 · últimos 3 km valientes. Viernes y sábado descanso total.'}],cf:'Sin CrossFit esta semana',db:'¡Media hecha! Toca descansar y disfrutarlo.'}
+]}
+];
+
+var KEY='reset21k_v1',done=[];
+try{done=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){done=[]}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+
+function wkHtml(w){
+var cards=w.r.map(function(x){return '<div class="wc '+(x.c==='race'||x.c==='test'?x.c:'')+'"><div class="wt '+x.c+'">'+x.l+'</div><div class="wm">'+x.m+'</div>'+(x.s?'<div class="ws">'+x.s+'</div>':'')+'</div>'}).join('');
+return '<div class="wk '+(w.k||'')+'" data-w="'+w.id+'"><div class="wh"><div class="ck">✓</div><div class="wn">'+w.n+'</div><div class="ar">▶</div><div class="wd">'+w.d+'</div><div class="wv">'+w.v+'</div></div><div class="db">'+(w.db||'✓ Semana completada')+'</div><div class="wb">'+cards+'<div class="cf">💜 '+w.cf+'</div></div></div>';
+}
+document.getElementById('plan').innerHTML=PLAN.map(function(p){
+return '<div class="lbl">'+p.b+' · '+p.n+'</div><div class="ph '+p.k+'"><div class="ph-h"><div class="ph-r"><span class="bd">'+p.b+'</span><span class="pn">'+p.n+'</span></div><div class="pd">'+p.d+'</div><div class="pf">'+p.f+'</div></div>'+p.w.map(wkHtml).join('')+'<div class="note">'+p.note+'</div></div>';
+}).join('');
+
+function progress(){
+var t=document.querySelectorAll('.wk').length,d=document.querySelectorAll('.wk.done').length;
+document.getElementById('pg').textContent=d+' / '+t+' semanas';
+}
+document.getElementById('plan').addEventListener('click',function(e){
+var el=e.target.closest('.wk');if(!el)return;var id=el.dataset.w;
+if(el.classList.contains('done')){el.classList.remove('done','open');done=done.filter(function(x){return x!==id})}
+else if(el.classList.contains('open')){el.classList.remove('open');el.classList.add('done');if(done.indexOf(id)<0)done.push(id)}
+else el.classList.add('open');
+save();progress();
+});
+done.forEach(function(id){var el=document.querySelector('[data-w="'+id+'"]');if(el)el.classList.add('done')});
+progress();
+var diff=Math.ceil((new Date(2027,3,4)-new Date())/864e5);
+document.getElementById('cd').textContent=diff>0?diff+' días':(diff===0?'¡HOY!':'completado');
+var topBtn=document.getElementById('top');
+topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+window.addEventListener('scroll',function(){topBtn.classList.toggle('on',window.scrollY>400)});
+</script>
+</body>
+</html>
